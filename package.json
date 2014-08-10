@@ -1,0 +1,28 @@
+{
+  "name": "date-pikinator",
+  "version": "0.1.0",
+  "description": "Date picker React component",
+  "main": "index.coffee",
+  "keywords": ["date", "ui", "react"]
+  "scripts": {
+    "beefy": "http-server . -p 9000 & watchify -t coffeeify --extension='.coffee' demo.coffee -o demo.js --debug --verbose",
+    "build-js": "browserify -t coffeeify --standalone DatePikinator --extension='.coffee' index.coffee > date-pikinator.js",
+    "watch": "watchify -t coffeeify --extension='.coffee' index.coffee -o date-pikinator.js --debug --verbose",
+    "watch-demo": "watchify -t coffeeify --extension='.coffee' demo.coffee -o demo.js --debug --verbose",
+    "test": "browserify -t coffeeify --extension='.coffee' test/*.coffee | testlingify"
+  },
+  "author": "Ryan L. Bell",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "^5.9.1",
+    "moment": "^2.8.1",
+    "pikaday": "^1.2.0",
+    "react": "^0.11.1"
+  },
+  "devDependencies": {
+    "coffeeify": "^0.7.0",
+    "tape": "^2.13.4",
+    "testling": "^1.7.0",
+    "watchify": "^1.0.1"
+  }
+}
