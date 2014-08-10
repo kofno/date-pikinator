@@ -4,6 +4,10 @@
   "description": "Date picker React component",
   "main": "index.coffee",
   "keywords": ["date", "ui", "react"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kofno/date-pikinator"
+  },
   "scripts": {
     "beefy": "http-server . -p 9000 & watchify -t coffeeify --extension='.coffee' demo.coffee -o demo.js --debug --verbose",
     "build-js": "browserify -t coffeeify --standalone DatePikinator --extension='.coffee' index.coffee > date-pikinator.js",
