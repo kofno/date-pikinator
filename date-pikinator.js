@@ -1,55 +1,55 @@
 !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.DatePikinator=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var Pikaday, React, cx, input;
-
-React = require('react/addons');
-
-Pikaday = require('pikaday');
-
-input = React.DOM.input;
-
-cx = React.addons.classSet;
+var React = require('react/addons'),
+    Pikaday = require('pikaday'),
+    input = React.DOM.input
+    ;
 
 module.exports = React.createClass({
   getInitialState: function() {
-    return {
-      value: this.formatAsDate()
-    };
+    return { value: this.formatAsDate() }
   },
+
   componentDidMount: function() {
-    return this.picker = new Pikaday({
+    this.picker = new Pikaday({
       field: this.getDOMNode(),
       format: 'L'
     });
   },
+
   handleChange: function(event) {
-    return this.setState({
+    this.setState({
       value: event.target.value
     });
   },
+
   handleBlur: function(event) {
-    return this.setState({
+    this.setState({
       value: this.formatAsDate(event.target.value)
     });
   },
+
   formatAsDate: function(candidate) {
     if (candidate != null) {
       if (this.isValid(candidate)) {
         return new Date(candidate).toLocaleDateString();
-      } else {
+      }
+      else {
         return candidate;
       }
-    } else {
+    }
+    else {
       return new Date().toLocaleDateString();
     }
   },
+
   isValid: function(dateish) {
-    var date;
-    date = new Date(dateish);
+    var date = new Date(dateish);
     return !isNaN(date.getTime());
   },
+
   render: function() {
-    var classes;
-    classes = cx({
+    var cx = React.addons.classSet;
+    var classes = cx({
       invalid: !this.isValid(this.state.value)
     });
     return input({
@@ -60,8 +60,6 @@ module.exports = React.createClass({
     }, []);
   }
 });
-
-
 
 },{"pikaday":4,"react/addons":5}],2:[function(require,module,exports){
 // shim for using process in browser
