@@ -1,19 +1,21 @@
 {
   "name": "date-pikinator",
+  "author": "Ryan L. Bell <ryan.l.bell@gmail.com>",
   "version": "0.1.0",
   "description": "Date picker React component",
-  "main": "index.coffee",
+  "main": "index.js",
   "keywords": ["date", "ui", "react"],
+  "directories": ["stylesheets"],
   "repository": {
     "type": "git",
     "url": "https://github.com/kofno/date-pikinator"
   },
   "scripts": {
-    "beefy": "http-server . -p 9000 & watchify -t coffeeify --extension='.coffee' demo.coffee -o demo.js --debug --verbose",
-    "build-js": "browserify -t coffeeify --standalone DatePikinator --extension='.coffee' index.coffee > date-pikinator.js",
-    "watch": "watchify -t coffeeify --extension='.coffee' index.coffee -o date-pikinator.js --debug --verbose",
-    "watch-demo": "watchify -t coffeeify --extension='.coffee' demo.coffee -o demo.js --debug --verbose",
-    "test": "browserify -t coffeeify --extension='.coffee' test/*.coffee | testlingify"
+    "beefy": "http-server . -p 9000 & watchify demo.js -o demo-bundle.js --debug --verbose",
+    "build-js": "browserify --standalone DatePikinator index.js > date-pikinator.js",
+    "watch": "watchify index.js -o date-pikinator.js --debug --verbose",
+    "watch-demo": "watchify demo.js -o demo-bundle.js --debug --verbose",
+    "test": "browserify  test/*.js | testlingify"
   },
   "author": "Ryan L. Bell",
   "license": "MIT",
@@ -24,7 +26,6 @@
     "react": "^0.11.1"
   },
   "devDependencies": {
-    "coffeeify": "^0.7.0",
     "tape": "^2.13.4",
     "testling": "^1.7.0",
     "watchify": "^1.0.1"
