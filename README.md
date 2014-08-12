@@ -3,6 +3,20 @@ Date Pikinator
 
 A React input component for picking dates. Leverages the Pikaday control to create the calendar pop-up.
 
+Example
+-------
+
+```javascript
+var React = require('react'),
+    DatePicker = require('date-pikinator')
+    ;
+
+React.renderComponent(
+  DatePicker({}),
+  document.body
+);
+```
+
 Features
 --------
 

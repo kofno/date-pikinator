@@ -1,11 +1,17 @@
 {
   "name": "date-pikinator",
-  "author": "Ryan L. Bell <ryan.l.bell@gmail.com>",
+  "author": "Ryan L. Bell",
   "version": "0.1.0",
   "description": "Date picker React component",
   "main": "index.js",
-  "keywords": ["date", "ui", "react"],
-  "directories": ["stylesheets"],
+  "keywords": [
+    "date",
+    "ui",
+    "react"
+  ],
+  "directories": [
+    "stylesheets"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kofno/date-pikinator"
@@ -17,7 +23,6 @@
     "watch-demo": "watchify demo.js -o demo-bundle.js --debug --verbose",
     "test": "browserify  test/*.js | testlingify"
   },
-  "author": "Ryan L. Bell",
   "license": "MIT",
   "dependencies": {
     "browserify": "^5.9.1",
@@ -26,7 +31,7 @@
     "react": "^0.11.1"
   },
   "devDependencies": {
-    "tape": "^2.13.4",
+    "tap": "^0.4.12",
     "testling": "^1.7.0",
     "watchify": "^1.0.1"
   }
