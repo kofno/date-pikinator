@@ -18,8 +18,6 @@
   },
   "scripts": {
     "beefy": "http-server . -p 9000 & watchify demo.js -o demo-bundle.js --debug --verbose",
-    "build-js": "browserify --standalone DatePikinator index.js > date-pikinator.js",
-    "watch": "watchify index.js -o date-pikinator.js --debug --verbose",
     "watch-demo": "watchify demo.js -o demo-bundle.js --debug --verbose",
     "test": "browserify  test/*.js | testlingify"
   },

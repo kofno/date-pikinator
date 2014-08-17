@@ -5,7 +5,9 @@ var React = require('react/addons'),
 
 module.exports = React.createClass({
   getInitialState: function() {
-    return { value: this.formatAsDate() }
+    return {
+      value: this.formatAsDate(this.props.defaultValue)
+    }
   },
 
   componentDidMount: function() {
@@ -22,9 +24,14 @@ module.exports = React.createClass({
   },
 
   handleBlur: function(event) {
-    this.setState({
-      value: this.formatAsDate(event.target.value)
-    });
+    var candidate = event.target.value;
+    event.value = new Date(candidate);
+    event.isValid = this.isValid(candidate);
+    this.props.onChange(event);
+
+    this.handleChange(event);
+
+    return true;
   },
 
   formatAsDate: function(candidate) {
@@ -54,8 +61,10 @@ module.exports = React.createClass({
     return input({
       type: 'date',
       onChange: this.handleChange,
+      onBlur: this.handleBlur,
       value: this.state.value,
-      className: classes
+      className: classes,
+      ref: this.props.ref
     }, []);
   }
 });

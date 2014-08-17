@@ -1,0 +1,8 @@
+v0.2.0
+- Form refs props
+- defaultValue props
+- onChange events
+
+v0.1.0
+- Pop up calendar
+- 'invalid' class set automatically
