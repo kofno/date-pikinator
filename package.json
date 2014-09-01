@@ -18,6 +18,7 @@
   },
   "scripts": {
     "beefy": "http-server . -p 9000 & watchify demo.js -o demo-bundle.js --debug --verbose",
+    "build-demo": "browserify demo.js > demo-bundle.js",
     "watch-demo": "watchify demo.js -o demo-bundle.js --debug --verbose",
     "test": "browserify  test/*.js | testlingify"
   },

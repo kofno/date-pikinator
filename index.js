@@ -11,10 +11,13 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function() {
-    this.picker = new Pikaday({
-      field: this.getDOMNode(),
-      format: 'L'
-    });
+    var dateInput = this.getDOMNode();
+    if (dateInput.valueAsDate === undefined) {
+      this.picker = new Pikaday({
+        field: dateInput,
+        format: 'L'
+      });
+    }
   },
 
   handleChange: function(event) {

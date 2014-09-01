@@ -1,3 +1,6 @@
+v0.3.0
+- Don't enhance if browser reports input date support
+
 v0.2.0
 - Form refs props
 - defaultValue props
